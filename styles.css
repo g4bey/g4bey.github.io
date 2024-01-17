@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#space-view {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: black; /* Set background color to black for space-like appearance */
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    animation: twinkle 2s linear infinite, moveStar 10s linear infinite;
+    opacity: 0; /* Initially set opacity to 0 */
+}
+
+.star.yellow {
+    background-color: yellow;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes moveStar {
+    0% { transform: translateY(-100vh) translateZ(0); }
+    100% { transform: translateY(100vh) translateZ(0); }
+}
